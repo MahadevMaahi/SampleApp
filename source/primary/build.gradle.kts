@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.kapt)
@@ -7,15 +7,17 @@ plugins {
 }
 
 android {
-    namespace = "com.sai.sample.app"
+    namespace = "com.sai.sample.primary"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.sai.sample.app"
+//        applicationId = "com.sai.sample.primary"
         minSdk = 24
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+//        versionCode = 1
+//        versionName = "1.0"
+
+        buildConfigField("String", "PRIMARY_BASE_URL", "\"https://jsonplaceholder.typicode.com/\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -47,8 +49,6 @@ android {
 
 dependencies {
 
-    implementation(project(":primary"))
-    implementation(project(":secondary"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

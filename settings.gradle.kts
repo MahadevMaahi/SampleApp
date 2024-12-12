@@ -21,3 +21,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "SampleApp"
 include(":app")
+
+include(":primary")
+project(":primary").projectDir = File(rootDir, "source/primary")
+
+include(":secondary")
+project(":secondary").projectDir = File(rootDir, "source/secondary")
