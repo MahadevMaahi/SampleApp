@@ -7,13 +7,58 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.9.3"
-composeBom = "2024.11.00"
+composeBom = "2024.12.01"
 hilt = "2.51.1"
+
+#Kotlin
+kotlinx_coroutines = "1.7.3"
+
+# AndroidX
+androidx_core_ktx = "1.10.1"
+androidx_appcompat = "1.7.0"
+androidx_activity = "1.9.3"
+androidx_browser = "1.8.0"
+
+# Google
+google-material = "1.12.0"
+google-dagger = "2.51.1"
+
+# Rx-Java
+rxandroid = "2.1.1"
+rxkotlin = "2.4.0"
+
+# Squareup-up
+squareup_okhttp = "4.12.0"
+squareup_retrofit2 = "2.11.0"
+
+#lifecycle
+lifecycle = "2.8.7"
+lifecycle-runtime = "2.8.7"
 
 #dagger-hilt
 hiltAndroid = "2.51.1"
 appcompat = "1.7.0"
 material = "1.12.0"
+
+#Compose
+composeLintChecks = "1.3.1"
+accompanist = "0.30.1"
+compose_constraintLayout = "1.1.0"
+
+# Navigation-Compose
+navigation_compose = "2.8.5"
+
+# Lottie-Compose
+lottie_compose = "4.0.0"
+
+# Logger
+timber = "5.0.1"
+
+# Image-Loader
+coil = "2.3.0"
+
+# Ktlint
+ktlint = "0.47.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -31,11 +76,76 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 
+# Kotlin
+kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx_coroutines" }
+kotlinx-coroutines-rx = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-rx2", version.ref = "kotlinx_coroutines" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx_coroutines" }
+kotlinx-reflection = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+
+# AndroidX
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx_appcompat" }
+androidx-activityKtx = { module = "androidx.activity:activity-ktx", version.ref = "androidx_activity" }
+androidx-browser = { module = "androidx.browser:broswer", version.ref = "androidx_browser" }
+
+# Lifecycle
+androidx-lifecycle = { module = "androidx.lifecycle:lifecycle-common-java8", version.ref = "lifecycle" }
+androidx-lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "lifecycle" }
+androidx-viewmodel-lifecycle = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+
+# Google
+google-dagger = { module = "com.google.dagger:dagger", version.ref = "google-dagger" }
+google-daggerAP = { module = "com.google.dagger:dagger-compiler", version.ref = "google-dagger" }
+google-material = { module = "com.google.android.material:material", version.ref = "google-material" }
+
+# Rx Java
+rxjava-rxandroid = { module = "io.reactivex.rxjava2:rxandroid", version.ref = "rxandroid" }
+rxjava-rxkotlin = { module = "io.reactivex.rxjava2:rxkotlin", version.ref = "rxkotlin" }
+
+# OkHttp
+squareup-okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "squareup_okhttp" }
+squareup-interceptorlogging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "squareup_okhttp" }
+
+# Retrofit
+squareup-adapterRxJava = { module = "com.squareup.retrofit2:adapter-rxjava2", version.ref = "squareup_retrofit2" }
+squareup-convertergson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "squareup_retrofit2" }
+squareup-retrofit2 = { module = "com.squareup.retrofit2:retrofit", version.ref = "squareup_retrofit2" }
+
+
+# Compose
+compose-ui-util = { module = "androidx.compose.ui:ui-util", name = "ui-util" }
+compose-lifecycle-runtime = {module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-runtime"}
+compose-lint-checks = {module = "com.slack.lint.compose:compose-lint-checks", version.ref = "composeLintChecks"}
+compose-constraintLayout = {module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "compose_constraintLayout"}
+
 # dagger-hilt
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+# Compose Navigation
+compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "navigation_compose" }
+
+# Accompanist
+compose-materialPlaceholder = { module = "com.google.accompanist:accompanist-placeholder-material", version.ref = "accompanist" }
+compose-systemui = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist" }
+compose-navigationAnimation = { module = "com.google.accompanist:accompanist-navigation-animation", version.ref = "accompanist" }
+compose-navigationMaterial = { module = "com.google.accompanist:accompanist-navigation-material", version.ref = "accompanist" }
+compose-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanist" }
+compose-pager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanist" }
+compose-swipeRefresh = { module = "com.google.accompanist:accompanist-swipeRefresh", version.ref = "accompanist" }
+compose-insets-ui = { module = "com.google.accompanist:accompanist-insets-ui", version.ref = "accompanist" }
+compose-insets = { module = "com.google.accompanist:accompanist-insets", version.ref = "accompanist" }
+
+# Lottie
+lottie-compose = { module = "com.airbnb.android:lottie-compose", version.ref = "lottie_compose" }
+
+# Logger
+logger-timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+
+# Coil
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+
+# Ktlint
+ktlint = { module = "com.pintrest:ktlint", version.ref = "ktlint" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

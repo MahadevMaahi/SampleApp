@@ -68,6 +68,15 @@ dependencies {
     // Dagger-hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+
+    // Retrofit
+    implementation(libs.squareup.retrofit2)
+    implementation (libs.squareup.okhttp)
+    implementation(libs.squareup.convertergson)
+    implementation(libs.squareup.adapterRxJava)
+
+    // ViewModel Compose
+    implementation(libs.androidx.viewmodel.lifecycle)
 }
 
 kapt {
