@@ -70,6 +70,10 @@ dependencies {
     kapt(libs.hilt.android.compiler)
     implementation(libs.hilt.navigation.compose)
 
+    // Dagger
+    implementation(libs.google.dagger)
+    implementation(libs.google.daggerAP)
+
     // Retrofit
     implementation(libs.squareup.retrofit2)
     implementation (libs.squareup.okhttp)

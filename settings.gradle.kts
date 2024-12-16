@@ -30,3 +30,9 @@ project(":secondary").projectDir = File(rootDir, "source/secondary")
 
 include(":navigation")
 project(":navigation").projectDir = File(rootDir, "source/navigation")
+
+include(":core")
+project(":core").projectDir = File(rootDir, "source/core")
+
+include(":common-ui")
+project(":common-ui").projectDir = File(rootDir, "source/common-ui")
