@@ -27,3 +27,6 @@ project(":primary").projectDir = File(rootDir, "source/primary")
 
 include(":secondary")
 project(":secondary").projectDir = File(rootDir, "source/secondary")
+
+include(":navigation")
+project(":navigation").projectDir = File(rootDir, "source/navigation")
