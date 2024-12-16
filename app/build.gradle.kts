@@ -49,6 +49,7 @@ dependencies {
 
     implementation(project(":primary"))
     implementation(project(":secondary"))
+    implementation(project(":navigation"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -68,6 +69,10 @@ dependencies {
     // Dagger-hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+
+    // Dagger
+    implementation(libs.google.dagger)
+    implementation(libs.google.daggerAP)
 }
 
 kapt {
