@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.kapt)
-    alias(libs.plugins.dagger.hilt)
+//    alias(libs.plugins.dagger.hilt)
 }
 
 android {
@@ -66,13 +66,13 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     // Dagger-hilt
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.android.compiler)
-    implementation(libs.hilt.navigation.compose)
+//    implementation(libs.hilt.android)
+//    kapt(libs.hilt.android.compiler)
+//    implementation(libs.hilt.navigation.compose)
 
     // Dagger
     implementation(libs.google.dagger)
-    implementation(libs.google.daggerAP)
+    kapt(libs.google.daggerAP)
 
     // Retrofit
     implementation(libs.squareup.retrofit2)
@@ -82,6 +82,8 @@ dependencies {
 
     // ViewModel Compose
     implementation(libs.androidx.viewmodel.lifecycle)
+
+    implementation(libs.compose.navigation)
 }
 
 kapt {

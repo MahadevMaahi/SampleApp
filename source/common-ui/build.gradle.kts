@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.kapt)
@@ -7,15 +7,15 @@ plugins {
 }
 
 android {
-    namespace = "com.sai.sample.app"
+    namespace = "com.sai.sample.common.ui"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.sai.sample.app"
+//        applicationId = "com.sai.sample.primary"
         minSdk = 24
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+//        versionCode = 1
+//        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -47,11 +47,6 @@ android {
 
 dependencies {
 
-    implementation(project(":primary"))
-    implementation(project(":secondary"))
-    implementation(project(":navigation"))
-    implementation(project(":core"))
-    implementation(project(":common-ui"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -71,10 +66,6 @@ dependencies {
     // Dagger-hilt
 //    implementation(libs.hilt.android)
 //    kapt(libs.hilt.android.compiler)
-
-    // Dagger
-    implementation(libs.google.dagger)
-    kapt(libs.google.daggerAP)
 }
 
 kapt {
