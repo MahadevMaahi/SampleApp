@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.kotlin.serialization)
 //    alias(libs.plugins.dagger.hilt)
 }
 
@@ -75,6 +76,10 @@ dependencies {
     // Dagger
     implementation(libs.google.dagger)
     kapt(libs.google.daggerAP)
+
+    // Navigation
+    implementation(libs.compose.navigation)
+    implementation(libs.kotlinx.serialization.json)
 }
 
 kapt {
