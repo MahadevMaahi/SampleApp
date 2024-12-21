@@ -48,6 +48,7 @@ compose_constraintLayout = "1.1.0"
 
 # Navigation-Compose
 navigation_compose = "2.8.5"
+serialization = "1.6.3"
 
 # Lottie-Compose
 lottie_compose = "4.0.0"
@@ -125,6 +126,7 @@ hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", ve
 
 # Compose Navigation
 compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "navigation_compose" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization"}
 
 # Accompanist
 compose-materialPlaceholder = { module = "com.google.accompanist:accompanist-placeholder-material", version.ref = "accompanist" }
@@ -156,4 +158,5 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-kapt = { id = "kotlin-kapt" }
 dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 

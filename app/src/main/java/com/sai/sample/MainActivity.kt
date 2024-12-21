@@ -11,24 +11,48 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.rememberNavController
+import com.sai.sample.core.di.AppDependencyProvider
+import com.sai.sample.navigation.destinations.Destinations
+import com.sai.sample.navigation.routes.PrimaryRoutes
 import com.sai.sample.ui.theme.SampleAppTheme
+import com.sample.primary.navigation.PrimaryDestinations
 
 //@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    private lateinit var navController: NavHostController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             SampleAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                navController = rememberNavController()
+                val destinations = createDestinations()
+                Scaffold(modifier = Modifier.fillMaxSize()) { _ ->
+                    NavHost(
+                        navController = navController,
+                        startDestination = PrimaryRoutes.PrimaryRoute
+                    ) {
+                        destinations.forEach { dest ->
+                            with (dest) { create(navController = navController) }
+                        }
+                    }
                 }
             }
         }
     }
+
+    private fun createDestinations(): List<Destinations> = listOf(
+        PrimaryDestinations(
+            context = applicationContext,
+            navController = navController,
+            appDependencyProvider = applicationContext as AppDependencyProvider
+        )
+    )
 }
 
 @Composable
