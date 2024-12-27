@@ -5,20 +5,18 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.sai.sample.core.di.AppDependencyProvider
 import com.sai.sample.navigation.destinations.Destinations
 import com.sai.sample.navigation.routes.PrimaryRoutes
-import com.sai.sample.ui.theme.SampleAppTheme
+import com.sai.sample.common.ui.cream.foundation.SampleTheme
 import com.sample.primary.navigation.PrimaryDestinations
 
 //@AndroidEntryPoint
@@ -29,7 +27,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            SampleAppTheme {
+            SampleTheme {
                 navController = rememberNavController()
                 val destinations = createDestinations()
                 Scaffold(modifier = Modifier.fillMaxSize()) { _ ->
@@ -66,7 +64,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    SampleAppTheme {
+    SampleTheme {
         Greeting("Android")
     }
 }
