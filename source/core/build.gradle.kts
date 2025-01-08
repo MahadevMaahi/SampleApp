@@ -68,6 +68,10 @@ dependencies {
     // Dagger-hilt
 //    implementation(libs.hilt.android)
 //    kapt(libs.hilt.android.compiler)
+
+    // Dagger-2
+    implementation(libs.google.dagger)
+    kapt(libs.google.daggerAP)
 }
 
 kapt {

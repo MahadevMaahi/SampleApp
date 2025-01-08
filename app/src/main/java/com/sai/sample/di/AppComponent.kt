@@ -4,6 +4,7 @@ import android.content.Context
 import com.sai.sample.application.SampleApp
 import com.sai.sample.core.di.MainInjector
 import com.sai.sample.di.modules.InjectorBindModule
+import com.sai.sample.di.modules.InjectorProviderModule
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -11,7 +12,7 @@ import javax.inject.Singleton
 @Singleton
 @Component(
     modules = [
-        InjectorBindModule::class,
+        InjectorProviderModule::class,
         InjectorBindModule::class
     ],
     dependencies = []

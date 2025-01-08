@@ -1,6 +1,19 @@
 package com.sai.sample.core.di
 
+import com.sai.sample.core.di.dispatchers.Dispatcher
+import com.sai.sample.core.di.dispatchers.SampleDispatchers
+import kotlinx.coroutines.CoroutineDispatcher
+
 interface MainInjector {
+
+    @Dispatcher(dispatcher = SampleDispatchers.MAIN)
+    fun getMainDispatcher(): CoroutineDispatcher
+
+    @Dispatcher(dispatcher = SampleDispatchers.IO)
+    fun getIODispatcher(): CoroutineDispatcher
+
+    @Dispatcher(dispatcher = SampleDispatchers.DEFAULT)
+    fun getDefaultDispatcher(): CoroutineDispatcher
 
     companion object {
         private var _instance: MainInjector? = null
