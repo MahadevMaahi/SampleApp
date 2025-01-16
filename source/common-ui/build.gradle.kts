@@ -60,6 +60,14 @@ dependencies {
     // Dagger-hilt
 //    implementation(libs.hilt.android)
 //    kapt(libs.hilt.android.compiler)
+
+    // coil
+    implementation(libs.coil.compose)
+    // lottie
+    implementation(libs.lottie.compose)
+
+    // accompanist
+    implementation(libs.compose.materialPlaceholder)
 }
 
 kapt {
