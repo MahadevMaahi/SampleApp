@@ -1,5 +1,6 @@
 package com.sai.sample.common.ui.cream.components.buttons
 
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.shape.CircleShape
@@ -20,6 +21,127 @@ import com.sai.sample.common.ui.cream.foundation.SampleTheme
 import com.sai.sample.common.ui.util.throttleFirst
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.launch
+
+@Composable
+fun SamplePrimaryButton(
+    modifier: Modifier = Modifier,
+    buttonText: String,
+    buttonSize: ButtonSize,
+    enabled: Boolean = true,
+    onButtonClick: () -> Unit
+) {
+    SampleButton(
+        modifier = modifier,
+        buttonText = buttonText,
+        backgroundColor = SampleTheme.colors.themeColors.brandPrimary,
+        disabledBackgroundColor = SampleTheme.colors.themeColors.backgroundDisabled,
+        enabled = enabled,
+        buttonSize = buttonSize,
+        onButtonClick = onButtonClick
+    )
+}
+
+@Composable
+fun SampleSmallPrimaryButton(
+    modifier: Modifier = Modifier,
+    buttonText: String,
+    enabled: Boolean = true,
+    onButtonClick: () -> Unit
+) {
+    SamplePrimaryButton(
+        modifier = modifier,
+        buttonText = buttonText,
+        enabled = enabled,
+        buttonSize = ButtonSize.SMALL,
+        onButtonClick = onButtonClick
+    )
+}
+
+@Composable
+fun SampleLargePrimaryButton(
+    modifier: Modifier = Modifier,
+    buttonText: String,
+    enabled: Boolean = true,
+    onButtonClick: () -> Unit
+) {
+    SamplePrimaryButton(
+        modifier = modifier,
+        buttonText = buttonText,
+        enabled = enabled,
+        buttonSize = ButtonSize.LARGE,
+        onButtonClick = onButtonClick
+    )
+}
+
+@Composable
+fun SampleSecondaryButton(
+    modifier: Modifier = Modifier,
+    buttonText: String,
+    buttonSize: ButtonSize,
+    buttonTextColor: Color = SampleTheme.colors.themeColors.textPrimary,
+    borderColorEnable: Color = SampleTheme.colors.themeColors.textPrimary,
+    borderColorDisable: Color = SampleTheme.colors.themeColors.textDisabled,
+    backgroundColor: Color = Color.Transparent,
+    enabled: Boolean = true,
+    onButtonClick: () -> Unit
+) {
+    SampleButton(
+        modifier = modifier
+            .border(
+                width = 1.dp,
+                color = if(enabled) borderColorEnable else borderColorDisable,
+                shape = CircleShape
+            ),
+        buttonText = buttonText,
+        buttonTextColor = buttonTextColor,
+        backgroundColor = backgroundColor,
+        enabled = enabled,
+        buttonSize = buttonSize,
+        onButtonClick = onButtonClick
+    )
+}
+
+@Composable
+fun SampleSmallSecondaryButton(
+    modifier: Modifier = Modifier,
+    buttonText: String,
+    enabled: Boolean = true,
+    buttonTextColor: Color = SampleTheme.colors.themeColors.textPrimary,
+    borderColorEnable: Color = SampleTheme.colors.themeColors.textPrimary,
+    onButtonClick: () -> Unit
+) {
+    SampleSecondaryButton(
+        modifier = modifier,
+        buttonText = buttonText,
+        buttonSize = ButtonSize.SMALL,
+        enabled = enabled,
+        buttonTextColor = buttonTextColor,
+        borderColorEnable = borderColorEnable,
+        onButtonClick = onButtonClick
+    )
+}
+
+@Composable
+fun SampleLargeSecondaryButton(
+    modifier: Modifier = Modifier,
+    buttonText: String,
+    enabled: Boolean = true,
+    backgroundColor: Color = Color.Transparent,
+    borderColorDisable: Color = SampleTheme.colors.themeColors.textDisabled,
+    borderColorEnable: Color = SampleTheme.colors.themeColors.textPrimary,
+    onButtonClick: () -> Unit
+) {
+    SampleSecondaryButton(
+        modifier = modifier,
+        buttonText = buttonText,
+        buttonSize = ButtonSize.LARGE,
+        enabled = enabled,
+        backgroundColor = backgroundColor,
+        borderColorEnable = borderColorEnable,
+        borderColorDisable = borderColorDisable,
+        onButtonClick = onButtonClick
+    )
+}
 
 @Composable
 private fun SampleButton(
@@ -65,7 +187,7 @@ private fun SampleButton(
     }
 }
 
-private enum class ButtonSize(
+enum class ButtonSize(
     val size: Dp,
     val textStyle: TextStyle
 ) {
